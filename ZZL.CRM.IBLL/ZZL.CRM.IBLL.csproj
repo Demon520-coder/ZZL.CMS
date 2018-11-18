@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85A5D2AD-1610-4D09-A2FA-24AAC7E9DFBC}</ProjectGuid>
+    <ProjectGuid>{36655BFD-2186-4932-BB53-17D2FD31B2F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZZL.CMS.Entity</RootNamespace>
-    <AssemblyName>ZZL.CMS.Entity</AssemblyName>
+    <RootNamespace>ZZL.CRM.IBLL</RootNamespace>
+    <AssemblyName>ZZL.CRM.IBLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,9 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEntity.cs" />
-    <Compile Include="NewsInfo.cs" />
+    <Compile Include="INewsInfoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZZL.CMS.Common\ZZL.CMS.Common.csproj">
+      <Project>{6be3bfd4-90e8-4093-910e-9c7de283d499}</Project>
+      <Name>ZZL.CMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZZL.CMS.Entity\ZZL.CMS.Entity.csproj">
+      <Project>{85a5d2ad-1610-4d09-a2fa-24aac7e9dfbc}</Project>
+      <Name>ZZL.CMS.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

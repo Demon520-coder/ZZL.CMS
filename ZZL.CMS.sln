@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZL.CMS.Common", "ZZL.CMS.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZL.CMS.Test", "ZZL.CMS.Test\ZZL.CMS.Test.csproj", "{222E7348-F97B-4CAA-949E-A46F013D8706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZL.CRM.IBLL", "ZZL.CRM.IBLL\ZZL.CRM.IBLL.csproj", "{36655BFD-2186-4932-BB53-17D2FD31B2F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{222E7348-F97B-4CAA-949E-A46F013D8706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{222E7348-F97B-4CAA-949E-A46F013D8706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{222E7348-F97B-4CAA-949E-A46F013D8706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36655BFD-2186-4932-BB53-17D2FD31B2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36655BFD-2186-4932-BB53-17D2FD31B2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36655BFD-2186-4932-BB53-17D2FD31B2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36655BFD-2186-4932-BB53-17D2FD31B2F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

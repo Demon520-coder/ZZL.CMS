@@ -1,0 +1,116 @@
+﻿@model List<ZZL.CMS.Entity.NewsInfo>
+@using ZZL.CMS.Common
+@{
+    ViewBag.Title = "News";
+}
+
+
+@section styles{
+    <link href="~/Content/css/inner.css" rel="stylesheet" type="text/css" />
+}
+<div class="inner">
+    <!--left start-->
+    <div class="left">
+        <div class="Sbox">
+            <div class="topic">新闻动态&nbsp;&nbsp;&nbsp;News</div>
+            <div class="blank">
+                <ul>
+                    <li>
+                        <a href="#">公司新闻</a>
+                    </li>
+                    <li><a href="#">行业新闻</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="HeightTab clearfix"></div>
+        <div class="Sbox">
+            <div class="topic">最新资讯&nbsp;&nbsp;&nbsp;New</div>
+            <div class="list">
+                <dl>
+                    <dt>2012/5/23</dt>
+                    <dd>
+                        <a href="#" target="_blank" title="雅虎或出售亚洲资产推动阿里巴巴集团IPO">雅虎或出售亚洲资产推动阿里巴</a>
+                    </dd>
+                    <dt>2012/5/23</dt>
+                    <dd><a href="#" target="_blank" title="电商价格战煎熬上游供应商：订单爆棚员工抓狂">电商价格战煎熬上游供应商：订</a></dd>
+                    <dt>2012/5/23</dt>
+                    <dd><a href="#" target="_blank" title="上市即脱销 华为Ascend P1一机难求">上市即脱销 华为Ascend</a></dd>
+                    <dt>2012/5/23</dt>
+                    <dd><a href="#" target="_blank" title="Google推出知识图谱 搜索模式迎来大变革">Google推出知识图谱 搜</a></dd>
+                    <dt>2012/5/23</dt>
+                    <dd><a href="#" target="_blank" title="微软加入新一代DRAM团体HMCC的理由 ">微软加入新一代DRAM团体H</a></dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+    <!--left end-->
+    <!--right start-->
+    <div class="right">
+        <div class="Position" style="border-bottom:2px #dcdcdc solid;">
+            <span>
+                你的位置：<a href="index.html">首页</a> &gt;
+                <a href="news.html">新闻动态</a>
+            </span>
+        </div>
+        <!--main start-->
+        <div class="main">
+
+            <div class="ArticleList">
+                <ul></ul><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td width="80%" class="fw_t">·<a href="#" target="_blank">@item.Title</a></td>
+                                <td width="20%" class="fw_s">[@(item.CreateDate?.ToString("yyyy-MM-dd"))]</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="clearfix"></div>
+                <div class="t_page ColorLink">
+                    总数：<span>@(ViewBag.totalCount)条</span>&nbsp;&nbsp;当前页数：
+                    <span class="FontRed">@ViewBag.pageIndex</span>/@ViewBag.pageCount
+                    @MvcHtmlString.Create(PageHelper.GetPager2((int)ViewBag.pageIndex, (int)ViewBag.pageCount))
+                    <button id="btnRedirect">跳转到：</button> <input type="text" value="@ViewBag.pageIndex" id="txtPage" style="width:20px;" maxlength="4" />页
+                </div>
+
+                <div class="clearfix"></div>
+                @*<div class="t_page ColorLink">
+                        总数：@ViewBag.totalCount条&nbsp;&nbsp;当前页数：
+                        <span class="FontRed">@ViewBag.pageIndex</span>/@ViewBag.pageCount
+                        @{
+                            int pageIndex = (int)ViewBag.pageIndex;
+                            int pageCount = (int)ViewBag.pageCount;
+                        }
+
+                        @if (pageIndex >= 1)
+                        {
+                            <a href="@Url.Action("News","Home",new { pageIndex=1})">首页</a>@:&nbsp; &nbsp;<a href="@Url.Action("News","Home",new { pageIndex=(pageIndex-1)==0?1:(pageIndex-1)})">上一页</a> &nbsp; &nbsp;
+                            @MvcHtmlString.Create(PageHelper.GetPager(pageIndex, pageCount)) @:&nbsp; &nbsp;<a href="@Url.Action("News","Home",new { pageIndex=(pageIndex+1)>pageCount?pageCount:pageIndex+1})">下一页</a>&nbsp; &nbsp;<a href="@Url.Action("News","Home",new { pageIndex=ViewBag.pageCount})">尾页</a>
+                        }
+
+                    </div>*@
+            </div>
+
+        </div>
+        <!--main end-->
+    </div>
+    <!--right end-->
+</div>
+@section scripts{
+    <script>
+        $('#btnRedirect').click(function () {
+            //获得页码:
+            var pageIndex = $('#txtPage').val();
+            if (pageIndex) {
+                if (parseInt(pageIndex) > parseInt('@ViewBag.pageCount')) {
+                    pageIndex = '@ViewBag.pageCount';
+                }
+                window.location.href = '@Url.Action("News","Home")'+'?pageIndex=' + pageIndex;
+            }
+        });
+    </script>
+}
+

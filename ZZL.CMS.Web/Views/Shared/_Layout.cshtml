@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/css/style.css" rel="stylesheet" />
     <link href="~/Content/css/common.css" rel="stylesheet" />
@@ -56,14 +56,14 @@
                 <div class="TopLogo">
                     <div class="logo">
                         <a href="#">
-                            <img src="~/Content/img/logo.jpg" alt="魅族商城">
+                            <img src="~/Content/img/logo.jpg" alt="魅族商城" />
                         </a>
                     </div>
                     <div class="menu">
                         <ul>
                             <li><a href="index.html">首页</a></li>
                             <li><a href="product.html">公司产品</a></li>
-                            <li><a href="news.html">新闻动态</a></li>
+                            <li><a href="@Url.Action("News","Home")">新闻动态</a></li>
                             <li><a href="zhaopin.html">人才招聘</a></li>
                             <li><a href="teach.html">技术支持</a></li>
                             <li><a href="feedback.html">客户反馈</a></li>
@@ -77,8 +77,8 @@
         <div style="height:10px;"></div>
         <!--head end-->
         <!--body start-->
-        <div id="body">           
-           @RenderBody()
+        <div id="body">
+            @RenderBody()
             <div class="HeightTab clearfix"></div>
             <!--links start-->
             <div id="Links">
@@ -113,13 +113,13 @@
                     <a href="#" target="_blank">网站导航</a> |
                     <a href="#" target="_blank">应用中心</a> |
                     <a href="#" target="_blank">版权所有</a><br />
-                    Copyright © 2009 - 2014 LyWeb. All Rights Reserved <br>
+                    Copyright © 2009 - 2014 LyWeb. All Rights Reserved <br />
                 </p>
             </div>
         </div>
         <!--footer end -->
     </div>
-  
+
     <script src="~/Content/js/jquery.min.js"></script>
     <script src="~/Content/js/functions.js"></script>
     <script src="~/Content/js/myjs.js"></script>

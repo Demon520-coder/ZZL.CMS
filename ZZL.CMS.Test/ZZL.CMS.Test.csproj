@@ -57,9 +57,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZZL.CMS.BLL\ZZL.CMS.BLL.csproj">
+      <Project>{dbefaca1-f6a7-40b6-8c74-a773d1d13571}</Project>
+      <Name>ZZL.CMS.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZZL.CMS.Common\ZZL.CMS.Common.csproj">
       <Project>{6be3bfd4-90e8-4093-910e-9c7de283d499}</Project>
       <Name>ZZL.CMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZZL.CMS.Entity\ZZL.CMS.Entity.csproj">
+      <Project>{85a5d2ad-1610-4d09-a2fa-24aac7e9dfbc}</Project>
+      <Name>ZZL.CMS.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

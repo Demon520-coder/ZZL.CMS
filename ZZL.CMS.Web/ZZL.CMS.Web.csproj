@@ -48,6 +48,7 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,6 +138,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="news.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -144,6 +146,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Home\News.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -173,6 +176,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZZL.CMS.Common\ZZL.CMS.Common.csproj">
+      <Project>{6be3bfd4-90e8-4093-910e-9c7de283d499}</Project>
+      <Name>ZZL.CMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZZL.CMS.Entity\ZZL.CMS.Entity.csproj">
+      <Project>{85a5d2ad-1610-4d09-a2fa-24aac7e9dfbc}</Project>
+      <Name>ZZL.CMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZZL.CRM.IBLL\ZZL.CRM.IBLL.csproj">
+      <Project>{36655bfd-2186-4932-bb53-17d2fd31b2f2}</Project>
+      <Name>ZZL.CRM.IBLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

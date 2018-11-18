@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ZZL.CMS.BLL;
 using ZZL.CMS.Common;
 
 namespace ZZL.CMS.Test
@@ -61,6 +62,25 @@ namespace ZZL.CMS.Test
             reader.Close();
 
             Debug.Print(builder.ToString());
+        }
+
+        [TestMethod]
+        public void GetNewsList()
+        {
+            NewsInfoBll bll = new NewsInfoBll();
+
+            var result = bll.GetPagedList(2, 5);
+
+            Assert.AreEqual(result.Count == 5, true);
+        }
+
+        [TestMethod]
+        public void CeilingTest()
+        {
+            int result = (int)Math.Ceiling(12 / (5 * 1.0));
+            int num = 12;
+            double num2 = double.MinValue * 6665;
+            int num3 = (int)num2;
         }
     }
 }
