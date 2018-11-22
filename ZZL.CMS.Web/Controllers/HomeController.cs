@@ -7,12 +7,16 @@ using ZZL.CMS.Entity;
 using ZZL.CMS.Common;
 using ZZL.CRM.IBLL;
 using System.ComponentModel.Composition;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
 
 namespace ZZL.CMS.Web.Controllers
 {
-    [Export]  
+    [Export]
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         [Import]
         public INewsInfoBLL NewsInfoBll { get; set; }
@@ -21,7 +25,7 @@ namespace ZZL.CMS.Web.Controllers
         {
             return View();
         }
-        
+
         /// <summary>
         /// 新闻列表
         /// </summary>
@@ -37,6 +41,14 @@ namespace ZZL.CMS.Web.Controllers
             ViewBag.totalCount = totalCount;
 
             return View(list);
+        }
+
+
+
+        public ActionResult JsonTest()
+        {
+            return MyJson(200, "Ok", new { name = "zzl", date = DateTime.Now },"","yyyy-MM-dd HH:mm:ss", JsonRequestBehavior.AllowGet);
+
         }
     }
 }
